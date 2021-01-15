@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysqldb
+spec:
+  selector:
+    matchLabels:
+      app: mysqldb
+  template:
+    metadata:
+      labels:
+        app: mysqldb
+    spec:
+      containers:
+        - env:
+          - name: MYSQL_DATABASE
+            value: store_db
+          - name: MYSQL_ROOT_PASSWORD
+            value: root
+          image: mysql
+          name: mysqldb
+          ports:
+            - containerPort: 3306

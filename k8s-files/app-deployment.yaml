@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mywebapp
+spec:
+  selector:
+    matchLabels:
+      app: mywebapp
+  template:
+    metadata:
+      labels:
+        app: mywebapp
+    spec:
+      containers:
+        - name: mywebapp
+          image: aartibh/javakubernetes-poc:version2
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8082 
+          env:
+            - name: MYSQL_URL
+              value: mysql://mysqldb/store_db
+
+    
