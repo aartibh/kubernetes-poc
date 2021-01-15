@@ -18,7 +18,11 @@ spec:
           ports:
             - containerPort: 8082 
           env:
-            - name: MYSQL_URL
-              value: mysql://mysqldb/store_db
+            - name: SPRING_DATASOURCE_USERNAME
+              value: root
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: root
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:mysql://mysqldb/store_db
 
     
