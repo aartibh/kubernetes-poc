@@ -13,16 +13,17 @@ spec:
     spec:
       containers:
         - name: mywebapp
-          image: aartibh/javakubernetes-poc:version2
+          image: aartibh/javakubernetes-poc:version3
+          #image: punitg237/springboot-mysql:springboot-app
           imagePullPolicy: Always
           ports:
-            - containerPort: 8082 
+            - containerPort: 8081 
           env:
             - name: SPRING_DATASOURCE_USERNAME
               value: root
             - name: SPRING_DATASOURCE_PASSWORD
               value: root
-            - name: SPRING_DATASOURCE_URL
-              value: jdbc:mysql://mysqldb/store_db
+            # - name: SPRING_DATASOURCE_URL
+            #   value: jdbc:mysql://mysqldb/store_db
 
     
